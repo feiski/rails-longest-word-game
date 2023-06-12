@@ -1,0 +1,16 @@
+<h1>Your Score:</h1>
+<h2>Your word: <%= @word %></h2>
+<h2>Your current score: <%= session[:score] || 0 %></h2>
+
+<% if @valid_word %>
+  <!-- If the word is valid -->
+  <h3>Congratulations! <%= @word %> is a valid word! Your score is <%= session[:score] || 0 %>.</h3>
+<% else %>
+  <!-- If the word is not valid -->
+  <h3>Sorry, <%= @word %> is not a valid word. Your score is 0.</h3>
+<% end %>
+
+<h1>Final Score 🎉</h1>
+<h2>Your cumulative score: <%= session[:cumulative_score] || 0 %></h2>
+
+<%= link_to "Play again?", new_path %>
